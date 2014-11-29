@@ -1,3 +1,4 @@
 # Ignores .pyc, .pyo, .png and .pyd files
 *.py[cod]
+*.png
 

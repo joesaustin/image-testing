@@ -4,8 +4,7 @@ import image_diff, unittest, time
 class TakeScreenshot(unittest.TestCase):
     
     def setUp(self):
-        browser = webdriver.DesiredCapabilities.CHROME
-        self.driver = webdriver.Remote(desired_capabilities=browser)
+        self.driver = webdriver.Chrome()
         self.images = image_diff.ImageComparison()
         self.css = {"yahoo_logo":"a[id='yucs-logo-ani']",
                     "mail_image":"i[id='nav-mail']",

@@ -18,13 +18,14 @@ class TakeScreenshot(unittest.TestCase):
         directory = os.path.dirname(os.path.realpath(__file__))        
         for key, value in self.css.iteritems(): 
             element = self.driver.find_element_by_css_selector(value)
-            self.images.create_screenshot(directory, self.driver, element, key, set_window = False, mode = "baseline")
+            self.images.create_screenshot(directory, self.driver, element, key, set_window = False, mode = 'baseline')
             result = self.images.compare_images(directory,key, value[1])
-            #try:
-            #    self.assertEqual(True, result['status'], "%s image is off. %s" % (key, result['msg']))
-            #except AssertionError, e:
-            #    self.verification_errors.append(e)
-                
+            '''
+            try:
+                self.assertEqual(True, result['status'], "%s image is off. %s" % (key, result['msg']))
+            except AssertionError, e:
+                self.verification_errors.append(e)
+            ''' 
     def tearDown(self):
         self.driver.quit()
         self.assertEquals([], self.verification_errors)        
